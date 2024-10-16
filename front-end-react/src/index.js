@@ -10,13 +10,10 @@ root.render(
   <React.StrictMode>
     <div className="mockup-window bg-base-300">
 
-      <div className="bg-base-200 flex justify-center px-80 "> <Service /></div>
+      <Service />
 
     </div>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
