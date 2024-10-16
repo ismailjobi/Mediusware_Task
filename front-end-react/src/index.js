@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <div className="mockup-window bg-base-300">
 
-      <Service />
+      <div className="bg-base-200 flex justify-center px-80 "> <Service /></div>
 
     </div>
   </React.StrictMode>

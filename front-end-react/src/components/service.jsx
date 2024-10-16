@@ -1,46 +1,68 @@
 
 function Service() {
     return (
-      <div className="Service">
-        <form className="card-body" id="serviceform" >
+        <div className="Service">
+            <form className="card-body" id="serviceform" >
                 <div className="flex bg-base-100 w-full h-full flex-col">
                     <div className="card bg-base-100 rounded-box grid h-2 place-items-start">
-                       <b><strong className="text-black">Drop Use A <span className="text-red-400">Line</span> </strong></b> 
+                        <b><strong className="text-black">Drop Use A <span className="text-red-400">Line</span> </strong></b>
                     </div>
                     <div className="divider"></div>
-                    <div className="card bg-base-300 rounded-box grid h-100 ">
-                        <div className="flex w-full h-20 flex-col lg:flex-row">
-                            <div className="card bg-base-300 rounded-box grid h-20 flex-grow place-items-center">
-                                <label className="form-control w-full ">
+                    <div className="card bg-base-300 rounded-box grid h-auto">
+                        <div className="flex flex-col gap-4 w-full lg:flex-row">
+                            {/* Name and Phone Number */}
+                            <div className="card bg-base-300 rounded-box flex-grow w-full">
+                                <label className="form-control w-full">
                                     <div className="label">
                                         <span className="label-text">Name*</span>
                                     </div>
-                                    <input type="text" placeholder="Enter Your Name" className="input input-sm text-black input-bordered w-full " />
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Your Name"
+                                        className="input input-sm text-black input-bordered w-full"
+                                    />
                                 </label>
-                                <label className="form-control w-full ">
+                                <label className="form-control w-full">
                                     <div className="label">
-                                        <span className="label-text">Phone Number <span className="text-stone-400">(Optional)</span></span>
+                                        <span className="label-text">
+                                            Phone Number <span className="text-stone-400">(Optional)</span>
+                                        </span>
                                     </div>
-                                    <input type="text" placeholder="Enter Your Phone Number" className="input input-sm text-black input-bordered w-full " />
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Your Phone Number"
+                                        className="input input-sm text-black input-bordered w-full"
+                                    />
                                 </label>
                             </div>
                             <div className="divider lg:divider-horizontal"></div>
-                            <div className="card bg-base-300 rounded-box grid h-20 flex-grow place-items-center">
-                                <label className="form-control w-full ">
+                            {/* Email and Company Name */}
+                            <div className="card bg-base-300 rounded-box flex-grow w-full">
+                                <label className="form-control w-full">
                                     <div className="label">
                                         <span className="label-text">Email*</span>
                                     </div>
-                                    <input type="text" placeholder="Enter Your Email" className="input input-sm text-black input-bordered w-full " />
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Your Email"
+                                        className="input input-sm text-black input-bordered w-full"
+                                    />
                                 </label>
-                                <label className="form-control w-full ">
+                                <label className="form-control w-full">
                                     <div className="label">
-                                        <span className="label-text">Company Name <span className="text-stone-400">(Optional)</span></span>
+                                        <span className="label-text">
+                                            Company Name <span className="text-stone-400">(Optional)</span>
+                                        </span>
                                     </div>
-                                    <input type="text" placeholder="Enter Your Company Name" className="input input-sm text-black input-bordered w-full" />
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Your Company Name"
+                                        className="input input-sm text-black input-bordered w-full"
+                                    />
                                 </label>
                             </div>
                         </div>
-                        <br /><br />
+                        <br />
                         <label className="form-control w-full ">
                             <div className="label">
                                 <span className="label-text">Service you Need <span className="text-stone-400">(You can choose multiple)</span></span>
@@ -92,8 +114,8 @@ function Service() {
                     </div>
                 </div>
             </form>
-      </div>
+        </div>
     );
-  }
-  
-  export default Service;
+}
+
+export default Service;
