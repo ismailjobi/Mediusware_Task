@@ -1,117 +1,147 @@
+import React from 'react';
 
 function Service() {
     return (
-        <div className="Service">
-            <form className="card-body" id="serviceform" >
-                <div className="flex bg-base-100 w-full h-full flex-col">
-                    <div className="card bg-base-100 rounded-box grid h-2 place-items-start">
-                        <b><strong className="text-black">Drop Use A <span className="text-red-400">Line</span> </strong></b>
-                    </div>
-                    <div className="divider"></div>
-                    <div className="card bg-base-300 rounded-box grid h-auto">
-                        <div className="flex flex-col gap-4 w-full lg:flex-row">
-                            {/* Name and Phone Number */}
-                            <div className="card bg-base-300 rounded-box flex-grow w-full">
-                                <label className="form-control w-full">
-                                    <div className="label">
-                                        <span className="label-text">Name*</span>
-                                    </div>
+        <div className="Service p-6 max-w-5xl mx-auto">
+            <form className="card-body bg-white rounded-lg  p-8" id="serviceform">
+                <div className="mb-4 text-left">
+                    <h1 className="text-3xl font-bold font-serif">
+                        Drop Us a <span className="text-green-500">Line</span>
+                    </h1>
+                </div>
+
+                <div className="bg-base-200 p-6 rounded-lg">
+                    <div className="px-7">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block">
+                                    <span className="text-gray-700">Name*</span>
                                     <input
                                         type="text"
                                         placeholder="Enter Your Name"
-                                        className="input input-sm text-black input-bordered w-full"
+                                        className="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md"
                                     />
                                 </label>
-                                <label className="form-control w-full">
-                                    <div className="label">
-                                        <span className="label-text">
-                                            Phone Number <span className="text-stone-400">(Optional)</span>
-                                        </span>
-                                    </div>
+                                <label className="block mt-4">
+                                    <span className="text-gray-700">Phone Number <span className="text-gray-500">(Optional)</span></span>
                                     <input
                                         type="text"
                                         placeholder="Enter Your Phone Number"
-                                        className="input input-sm text-black input-bordered w-full"
+                                        className="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md"
                                     />
                                 </label>
                             </div>
-                            <div className="divider lg:divider-horizontal"></div>
-                            {/* Email and Company Name */}
-                            <div className="card bg-base-300 rounded-box flex-grow w-full">
-                                <label className="form-control w-full">
-                                    <div className="label">
-                                        <span className="label-text">Email*</span>
-                                    </div>
+
+                            <div>
+                                <label className="block">
+                                    <span className="text-gray-700">Email*</span>
                                     <input
                                         type="text"
                                         placeholder="Enter Your Email"
-                                        className="input input-sm text-black input-bordered w-full"
+                                        className="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md"
                                     />
                                 </label>
-                                <label className="form-control w-full">
-                                    <div className="label">
-                                        <span className="label-text">
-                                            Company Name <span className="text-stone-400">(Optional)</span>
-                                        </span>
-                                    </div>
+                                <label className="block mt-4">
+                                    <span className="text-gray-700">Company Name <span className="text-gray-500">(Optional)</span></span>
                                     <input
                                         type="text"
                                         placeholder="Enter Your Company Name"
-                                        className="input input-sm text-black input-bordered w-full"
+                                        className="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md"
                                     />
                                 </label>
                             </div>
                         </div>
-                        <br />
-                        <label className="form-control w-full ">
-                            <div className="label">
-                                <span className="label-text">Service you Need <span className="text-stone-400">(You can choose multiple)</span></span>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="service1" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Mobile Development" value="Mobile Development" />
-                                <input type="checkbox" name="service2" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Web Development" value="Web Development" />
-                                <input type="checkbox" name="service3" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="SQA Solution" value="SQA Solution" />
-                                <input type="checkbox" name="service4" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Web UI/UX Design" value="Web UI/UX Design" />
-                                <input type="checkbox" name="service5" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="API Integration" value="API Integration" />
-                                <input type="checkbox" name="service6" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Mobile UI/UX Design" value="Mobile UI/UX Design" />
-                                <input type="checkbox" name="service7" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Software Development" value="Software Development" />
-                                <input type="checkbox" name="service8" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Custon Service" value="Custon Service" />
 
+                        <div className="mt-4">
+                            <label className="block text-gray-700">
+                                Services You Need <span className="text-gray-500">(You can choose multiple)</span>
+                            </label>
+                            <div className="flex flex-wrap gap-1">
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="mobileDevelopment" className="btn btn-outline bg-base-300 hover:bg-green-500" aria-label="Mobile Development" value="mobileDevelopment" id="mobileDevelopment" />
+                                </label>
+
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="webDevelopment" className="btn btn-outline bg-base-300  hover:bg-green-500" aria-label="Web Development" value="webDevelopment" id="webDevelopment" />
+
+                                </label>
+
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="sqaSolution" className="btn btn-outline bg-base-300 hover:bg-green-500" aria-label="SQA Solution" value="sqaSolution" id="sqaSolution" />
+
+                                </label>
+
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="UIux" className="btn btn-outline bg-base-300 hover:bg-green-500" aria-label="Web UX/UI Design" value="UIux" id="UIux" />
+                                </label>
+
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="api" className="btn btn-outline bg-base-300  hover:bg-green-500" aria-label="API Integration" value="api" id="api" />
+                                </label>
                             </div>
 
-                        </label>
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Your Budget <span className="text-stone-400">(Optional)</span></span>
-                            </div>
-                            <div>
-                                <input type="radio" name="service" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="Less than {'>'} $500" value="Less than {'>'} $500" />
-                                <input type="radio" name="service" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="$500 - $1000" value="$500 - $1000" />
-                                <input type="radio" name="service" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="$1001 - $1500" value="$1001 - $1500" />
-                                <input type="radio" name="service" className="btn btn-xs sm:btn-sm md:btn-md lg:btn-xs join-item" aria-label="$1501 - $2000" value="$1501 - $2000" />
-                            </div>
+                            {/* Second line with 3 buttons */}
+                            <div className="flex flex-wrap gap-1 mt-2">
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="mobileUiUx" className="btn btn-outline bg-base-300 hover:bg-green-500" aria-label="Mobile UX/UI Design" value="MobileUXUI" id="mobileUiUx" />
+                                </label>
 
-                        </label>
-                        <label className="form-control">
-                            <div className="label">
-                                <span className="label-text">Deep Details About Your Qurery <span className="text-stone-400">(Optional)</span></span>
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="services" className="btn btn-outline bg-base-300  hover:bg-green-500" aria-label="Software Development" value="softwareDevelopment" id="softwareDevelopment" />
+                                </label>
+
+                                <label className="flex items-center">
+                                    <input type="checkbox" name="services" className="btn btn-outline bg-base-300 hover:bg-green-500" aria-label="Custom Services" value="customServices" id="customServices" />
+                                </label>
                             </div>
-                            <textarea className="textarea text-black textarea-bordered h-24" placeholder="Tell us more about your qurery. "></textarea>
-                        </label>
-                        <label className="form-control">
-                            <div className="label">
-                                <span className="label-text">Add Atachments <span className="text-stone-400">(Optional)</span></span>
+                        </div>
+
+                        <div className="mt-4">
+                            <label className="block text-gray-700">Your Budget <span className="text-gray-500">(Optional)</span></label>
+                            <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 mt-3">
+                                <input type="radio" name="budget" className="btn btn-outline bg-base-300 btn-m hover:bg-green-500 join-item" aria-label="Less than &gt; $500" value="Less than $500" />
+                                <input type="radio" name="budget" className="btn btn-outline bg-base-300 btn-m hover:bg-green-500 join-item" aria-label="$500 - $1000" value="$500 - $1000" />
+                                <input type="radio" name="budget" className="btn btn-outline bg-base-300 btn-m hover:bg-green-500 join-item" aria-label="$1001 - $1500" value="$1001 - $1500" />
+                                <input type="radio" name="budget" className="btn btn-outline bg-base-300 btn-m hover:bg-green-500 join-item" aria-label="$1501 - $2000" value="$1501 - $2000" />
                             </div>
-                            <input type="file" multiple className="file-input bg-base-300 input-sm file-input-bordered w-full " />
-                        </label>
+                        </div>
+
+                        <div className="mt-4">
+                            <label className="block text-gray-700">Deep Details About Your Query <span className="text-gray-500">(Optional)</span></label>
+                            <textarea
+                                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md"
+                                placeholder="Tell us more about your query"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div className="mt-4">
+                            <label className="block text-gray-700">Add Attachments <span className="text-gray-500">(Optional)</span></label>
+                            <div className="join w-full h-10 bg-white border border-gray-300 flex items-center justify-between">
+                                <span className="block text-stone-400 ml-4 text-sm">
+                                    (a brief, idea, branding, guideline, old design,...)
+                                </span>
+                                <label className="btn bg-green-500 hover:bg-green-600 text-white btn-xs sm:btn-sm md:btn-md lg:btn-xs cursor-pointer flex items-center">
+                                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.6017 7.26634L8.59127 13.2768C7.22443 14.6436 5.00836 14.6436 3.64152 13.2768C2.27469 11.9099 2.27469 9.69384 3.64152 8.327L9.65193 2.3166C10.5632 1.40537 12.0405 1.40537 12.9518 2.3166C13.863 3.22782 13.863 4.7052 12.9518 5.61643L7.17705 11.3911C6.72144 11.8467 5.98275 11.8467 5.52714 11.3911C5.07153 10.9355 5.07153 10.1968 5.52714 9.74122L10.5947 4.67362" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                    <input type="file" className="hidden" />
+                                    Add File (5MB)
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div className="divider"></div>
-                    <div className="card bg-base-100 rounded-box grid h-10 place-items-start">
-                        <button type="submit" value="Submit" className="btn btn-primary btn-xs">
-                            Button
-                            <img src="https://th.bing.com/th/id/OIP.WoQRjIpml881xhHT2rj_vwHaHa?rs=1&pid=ImgDetMain" className="w-6 h-6" />
-                        </button>
-                    </div>
+                </div>
+
+                <div className="mt-6 text-left">
+                    <button type="submit" className="btn btn-sm btn-primary px-6 py-2 flex items-center">
+                        Send Inquiry
+                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.0004 10H4.50043M4.41577 10.2915L2.08085 17.2662C1.89742 17.8142 1.8057 18.0881 1.87152 18.2569C1.92868 18.4034 2.05144 18.5145 2.20292 18.5567C2.37736 18.6054 2.64083 18.4869 3.16776 18.2497L19.8792 10.7296C20.3936 10.4981 20.6507 10.3824 20.7302 10.2216C20.7993 10.082 20.7993 9.9181 20.7302 9.77843C20.6507 9.61767 20.3936 9.50195 19.8792 9.2705L3.16193 1.74776C2.63659 1.51135 2.37392 1.39315 2.19966 1.44164C2.04832 1.48375 1.92556 1.59454 1.86821 1.74078C1.80216 1.90917 1.8929 2.18255 2.07437 2.72931L4.41642 9.78556C4.44759 9.87947 4.46317 9.92642 4.46933 9.97444C4.47479 10.0171 4.47473 10.0602 4.46916 10.1028C4.46289 10.1508 4.44718 10.1977 4.41577 10.2915Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </button>
                 </div>
             </form>
         </div>

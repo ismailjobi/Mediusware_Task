@@ -8,7 +8,9 @@ import Service from './components/service';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="bg-base-200 flex justify-center px-80 "> <Service /></div>
+    <div className="bg-base-100 flex justify-center px-20 py-5 h-screen">
+      <Service />
+    </div>
   </React.StrictMode>
 );
 
