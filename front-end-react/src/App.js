@@ -3,6 +3,12 @@ import './App.css';
 import HomeCard from './components/homecard';
 import NavBar from './components/navbar';
 import Service from './components/service';
+import AboutSection from './components/aboutsection';
+import Worksection from './components/worksection';
+import Testimonials from './components/testimonials';
+import Projects from './components/projects';
+import Achievements from './components/achievements';
+import TabNavBar from './components/tabnavbar';
 function App() {
   return (<>
     <div className="relative min-h-screen">
@@ -18,6 +24,7 @@ function App() {
 
       <div className="relative z-10">
         <NavBar />
+        {/* <TabNavBar/> */}
         <HomeCard />
       </div>
       <div className="mt-40 place-items-end pr-10">
@@ -27,9 +34,24 @@ function App() {
         </svg>
       </div>
     </div>
-    {/* <div>
+    <div>
        <Service/>
-    </div> */}
+    </div>
+    <div>
+      <AboutSection/>
+    </div>
+    <div>
+      <Worksection/>
+    </div>
+    <div>
+      <Testimonials/>
+    </div>
+    <div>
+      <Projects/>
+    </div>
+    <div>
+      <Achievements/>
+    </div>
     </>
   );
 }
