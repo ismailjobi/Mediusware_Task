@@ -9,15 +9,15 @@ function Subscribe() {
                         <h2 className="text-lg font-semibold">Want to know what we are up to?</h2>
                         <p className="text-sm">Subscribe to our newsletter.</p>
                     </div>
-                    <form className="order-2 lg:order-2 flex flex-row sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                    <form className="order-2 lg:order-2 flex flex-row sm:space-x-3">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="p-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
+                            className="rounded-md p-3 text-black  focus:outline-none focus:ring-2 focus:ring-blue-500 h-10 w-full sm:w-auto"
                         />
                         <button
                             type="submit"
-                            className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition w-full sm:w-auto"
+                            className="bg-blue-500 text-white px-6  h-10 rounded-md hover:bg-blue-600 transition w-full sm:w-auto"
                         >
                             Subscribe
                         </button>
