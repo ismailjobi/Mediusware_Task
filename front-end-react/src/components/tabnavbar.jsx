@@ -31,34 +31,33 @@ function TabNavBar() {
                         </svg>
 
                     </div>
-                    <div className="items-end">
-                        <a href="#" className="hidden md:block text-white py-2 px-6 rounded-lg hover:bg-blue-600 border-2 transition-all">
-                            Get a Schedule
-                        </a>
-                        <div className="inline-block">
-                            <div className="dropdown">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 20H35M5 10H35M5 30H25" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                    <a href="#" className="hidden md:block text-white py-2 px-6 rounded-lg hover:bg-blue-600 border-2 transition-all">
+                                Get a Schedule
+                            </a>
+                    <div className="inline-block">
+                        <div className="dropdown">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 20H35M5 10H35M5 30H25" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
 
-                                </div>
-                                <ul
-                                    tabIndex={0}
-                                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                    <li><a href="#">Home</a></li>
-                                    <li><details>
-                                        <summary>Service</summary>
-                                        <ul className="bg-transparent rounded-t-none p-2">
-                                            <li><a href="#">Softwate Build</a></li>
-                                            <li><a href="#">Web Application</a></li>
-                                        </ul>
-                                    </details></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
                             </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li><a href="#">Home</a></li>
+                                <li><details>
+                                    <summary>Service</summary>
+                                    <ul className="bg-transparent rounded-t-none p-2">
+                                        <li><a href="#">Softwate Build</a></li>
+                                        <li><a href="#">Web Application</a></li>
+                                    </ul>
+                                </details></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            
                         </div>
                     </div>
 

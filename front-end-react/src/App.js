@@ -9,6 +9,10 @@ import Testimonials from './components/testimonials';
 import Projects from './components/projects';
 import Achievements from './components/achievements';
 import TabNavBar from './components/tabnavbar';
+import MobileNavBar from './components/mobilenavbar';
+import Subscribe from './components/subscribe';
+import Contact from './components/contact';
+import Footer from './components/footer';
 function App() {
   return (<>
     <div className="relative min-h-screen">
@@ -25,6 +29,7 @@ function App() {
       <div className="relative z-10">
         <NavBar />
         {/* <TabNavBar/> */}
+        {/* <MobileNavBar/> */}
         <HomeCard />
       </div>
       <div className="mt-40 place-items-end pr-10">
@@ -51,6 +56,15 @@ function App() {
     </div>
     <div>
       <Achievements/>
+    </div>
+    <div>
+      <Subscribe/>
+    </div>
+    <div>
+      <Contact/>
+    </div>
+    <div>
+      <Footer/>
     </div>
     </>
   );

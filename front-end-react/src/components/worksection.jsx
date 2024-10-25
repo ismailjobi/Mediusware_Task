@@ -112,11 +112,11 @@ function WorkSection() {
         <section className="bg-white py-16">
             <div className="max-w-7xl mx-auto px-4 text-center">
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 col-span-2">
                         <h2 className="text-4xl font-bold">
                             How We <span className="text-teal-400">Work Together</span>
                         </h2>
-                        <p className="mt-4 text-gray-600 max-w-2xl">
+                        <p className="mt-4 text-center text-gray-600 ">
                             Mediusware is a US-based software development company with unique access to premium developers & designers. We follow a structured process to ensure project success. Our approach guarantees reliability and ongoing support for every project. Here is the process we work on:
                         </p>
                     </div>
