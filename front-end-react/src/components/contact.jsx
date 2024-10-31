@@ -7,11 +7,11 @@ function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
                     <div className="p-6  text-center md:text-left">
-                        <div className="flex items-center">
+                        <div className="flex items-center relative">
                             <img
                                 src="CEOBD.png"
                                 alt="Person"
-                                className="w-[228px] h-[228px]  mx-auto md:mx-0 relative"
+                                className="w-[228px] h-[228px] mx-auto md:mx-0"
                             />
                             <div className="mt-20 border-2 px-[24px] pb-5 bg-[#A5EADA4D] relative z-10">
                                 <h2 className="text-lg font-semibold mt-4">Md. Shahinur Rahman</h2>
