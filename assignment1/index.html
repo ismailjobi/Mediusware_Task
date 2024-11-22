@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact, Subscribe & Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7faff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h3 {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Semantic HTML Layout */
+        header {
+            background-color: #e6ffcc;
+            padding: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #e6f3ff;
+            padding: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background-color: #ffffcc;
+            padding: 4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        article {
+            background-color: #ffe6cc;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        aside {
+            background-color: #ffe6f2;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Achievements & Awards Section */
+        .achievements-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .achievements-section h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #002a5c;
+        }
+
+        .achievements-section p {
+            color: #5a5a5a;
+            margin: 10px 0 30px;
+            font-size: 16px;
+        }
+
+        .achievements-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .achievement-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .achievement-card img {
+            max-width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .achievement-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .achievement-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Subscription Section */
+        .subscribe-section {
+            background: #002a5c;
+            border-radius: 8px;
+            padding: 20px;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .subscribe-form {
+            display: flex;
+        }
+
+        .subscribe-form input {
+            border: none;
+            border-radius: 4px 0 0 4px;
+            padding: 10px;
+            font-size: 14px;
+            width: 300px;
+        }
+
+        .subscribe-form button {
+            background: #0073e6;
+            color: #fff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .schedule-table .seminar {
+            background-color: #eaf5ff;
+            color: #333;
+        }
+
+        .schedule-table .yellow {
+            background-color: #fff5d9;
+        }
+
+        .schedule-table .green {
+            background-color: #eaffd5;
+        }
+
+        .schedule-table .purple {
+            background-color: #ede9ff;
+        }
+
+        .schedule-title {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Contact Section Layout */
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 48%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* Profile Image Container */
+        .profile-card .image-container {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .profile-container {
+            display: flex;
+            position: relative;
+            
+        }
+
+        .profile-container {
+            display: flex;
+            position: relative;
+            align-items: flex-end;
+            
+        }
+
+        .image-container {
+            position: relative;
+            z-index: 1;
+            
+        }
+
+        .info-container {
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            z-index: 2;
+            white-space: nowrap;
+            
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+        }
+
+       h4 {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+
+
+        .profile-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+        }
+
+        .profile-card h2 {
+            font-size: 22px;
+            color: #002a5c;
+            margin: 0;
+        }
+
+        .profile-card h3 {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .profile-card p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .profile-card .info {
+            margin-top: 30px;
+        }
+
+        .profile-card .cta {
+            margin-top: 30px;
+            border: #64748B;
+            background-color: #F0F8FF;
+        }
+
+        .profile-card .cta h3 {
+            font-size: 16px;
+            color: #0073e6;
+        }
+
+        .profile-card .cta p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .profile-card .cta a {
+            font-size: 16px;
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        .profile-card .cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            width: 48%;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 22px;
+            color: #002a5c;
+            margin-bottom: 10px;
+        }
+
+        .contact-form p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 48%;
+        }
+
+        .contact-form .form-group.full-width {
+            width: 100%;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .contact-form label .optional {
+            color: #64748B;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .submit-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            gap: 8px;
+            width: 40%;
+            align-items: center;
+            margin-top: auto;
+
+        }
+
+        .submit-button svg {
+            width: 22px;
+            height: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #005bb5;
+        }
+
+        .contact-form button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Layout -->
+        <header>
+            <h2>&lt; header &gt;</h2>
+        </header>
+
+        <nav>
+            <h2>&lt; nav &gt;</h2>
+        </nav>
+
+        <main>
+            <div>
+                <section>
+                    <h2>&lt; section &gt;</h2>
+                </section>
+
+                <article>
+                    <h2> &lt; article &gt;</h2>
+                </article>
+            </div>
+
+            <aside>
+                <h2> &lt; aside &gt;</h2>
+            </aside>
+        </main>
+
+        <footer>
+            <h2>&lt; footer &gt;</h2>
+        </footer>
+        <!-- Schedule Table -->
+        <div>
+            <h1 class="schedule-title">Schedule Table</h1>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th rowspan="3">Day</th>
+                        <th class="seminar" colspan="3">Seminar</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Schedule</th>
+                        <th  rowspan="2">Seminar Topic</th>
+                    </tr>
+                    <tr>
+                        <th>Begin</th>
+                        <th>End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Monday</td>
+                        <td rowspan="2" class="yellow">8:00am</td>
+                        <td rowspan="2" class="purple">5:00pm</td>
+                        <td>Introduction to XML</td>
+                    </tr>
+                    <tr>
+                        <td>Validity: DTD and Relax NG</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Tuesday</td>
+                        <td class="yellow">8:00am</td>
+                        <td class="green">11:00am</td>
+                        <td>XPath</td>
+                    </tr>
+                    <tr>
+                        <td class="green">11:00am</td>
+                        <td class="yellow">2:00pm</td>
+                    </tr>
+                    <tr>
+                        <td class="green">11:00am</td>
+                        <td class="purple">5:00pm</td>
+                        <td>XSL Transformation</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td class="green">11:00am</td>
+                        <td class="yellow">5:00pm</td>
+                        <td>XSL Formatting Objects</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Achievements & Awards Section -->
+        <div class="achievements-section">
+            <h1>Achievements & Awards</h1>
+            <p>
+                People know us for our top-notch work and great customer service, all of whom have expressed nothing but
+                positive feedback about our services. Take a moment to see for yourself.
+            </p>
+            <div class="achievements-logos">
+                <div class="achievement-card">
+                    <img src="D:\Mediusware\assignment1\Images\clutch.png" alt="Clutch Logo">
+                </div>
+
+                <div class="achievement-card">
+                    <img src="D:\Mediusware\assignment1\Images\2db21729abb257030cdee2c04dfbccd1.png" alt="Upwork Logo">
+                </div>
+
+                <div class="achievement-card">
+                    <img src="D:\Mediusware\assignment1\Images\google.jpg" alt="Google Logo">
+                </div>
+
+                <div class="achievement-card">
+                    <img src="D:\Mediusware\assignment1\Images\developer.png" alt="Top Developers Logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Section -->
+        <div class="subscribe-section">
+            <div>
+                <h3>Want to know what we are up to?</h3>
+                <p>Subscribe to our newsletter.</p>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="profile-container">
+                    <div class="image-container">
+                        <img src="D:\Mediusware\assignment1\Images\ceo.jpg" alt="Profile Picture">
+                    </div>
+                    <div class="info-container">
+                        <h4>Md. Shahinur Rahman</h2>
+                        <h4>Managing Director, Mediusware Ltd</h3>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <p>
+                        I'd be excited to talk with you about your projects or what you need. Fill in the form or send
+                        us an
+                        email at <a href="mailto:info@mediusware.com">info@mediusware.com</a>.
+                    </p>
+                    <p><strong>Talk to you in less than 24hs.</strong></p>
+                    <div class="cta">
+                        <h3>Book a call</h3>
+                        <p>Feel free to select a time at your convenience!</p>
+                        <a href="#">Let’s Talk →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Got an idea? We’ve got the skills.</h2>
+                <p>Fill out our contact form and we’ll get in touch!</p>
+                <form>
+                    <!-- Name and Email in the same row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input id="name" type="text" placeholder="Enter Your Name*" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input id="email" type="email" placeholder="Enter Your Email*" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone and Company Name in the same row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="optional">(Optional)</span></label>
+                            <input id="phone" type="text" placeholder="Enter Your Phone Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name <span class="optional">(Optional)</span></label>
+                            <input id="company" type="text" placeholder="Enter Your Company Name ">
+                        </div>
+                    </div>
+
+                    <!-- Query Field takes the full row -->
+                    <div class="form-group full-width">
+                        <label for="query">Tell us more about your query <span
+                                class="optional">(Optional)</span></label>
+                        <textarea id="query" placeholder="Tell us more about your query (Optional)"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Submit Inquiry
+                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.50043 10H4.00043M3.91577 10.2915L1.58085 17.2662C1.39742 17.8142 1.3057 18.0881 1.37152 18.2569C1.42868 18.4034 1.55144 18.5145 1.70292 18.5567C1.87736 18.6054 2.14083 18.4869 2.66776 18.2497L19.3792 10.7296C19.8936 10.4981 20.1507 10.3824 20.2302 10.2216C20.2993 10.082 20.2993 9.9181 20.2302 9.77843C20.1507 9.61767 19.8936 9.50195 19.3792 9.2705L2.66193 1.74776C2.13659 1.51135 1.87392 1.39315 1.69966 1.44164C1.54832 1.48375 1.42556 1.59454 1.36821 1.74078C1.30216 1.90917 1.3929 2.18255 1.57437 2.72931L3.91642 9.78556C3.94759 9.87947 3.96317 9.92642 3.96933 9.97444C3.97479 10.0171 3.97473 10.0602 3.96916 10.1028C3.96289 10.1508 3.94718 10.1977 3.91577 10.2915Z"
+                                stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+
+
+
+
+
+
+        </div>
+</body>
+
+</html>

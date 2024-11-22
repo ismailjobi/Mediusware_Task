@@ -1,7 +1,8 @@
 const express = require('express');
 const connectDB = require('./Config/db');
-const authRoutes = require('./routes/authRoutes');
-const postRoutes = require('./routes/postRoutes');
+const authRoutes = require('./Routes/authRoutes');
+const postRoutes = require('./Routes/PostRoutes');
+const userRoutes = require('./Routes/userRoutes');
 
 const app = express();
 
@@ -12,8 +13,9 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/auth', authRoutes);
-app.use('/posts', postRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/posts', postRoutes);
 
 // Start Server
 app.listen(3000, () => {

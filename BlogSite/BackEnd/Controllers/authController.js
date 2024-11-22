@@ -1,16 +1,31 @@
 const User = require('../Models/userModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const jwtConstants  = require('../Middleware/constant') ;
 
 // Signup
 exports.signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    const user = new User({ name, email, password });
+    // Check if there's an uploaded file and set picture filename
+    const pictureFilename = req.file ? req.file.filename : 'profileicon.jpg';
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    // Create the new user with the picture file name
+    const user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: hashedPassword,
+      picture: pictureFilename
+    });
+    
+    // Save user to the database
     await user.save();
-    res.status(201).json({ message: 'User registered successfully' });
+
+    res.status(201).json({ message: 'User registered successfully', user });
   } catch (error) {
-    res.status(400).json({ error: 'Error creating user' });
+    console.error(error);
+    res.status(400).json({ error: 'Failed to register user' });
   }
 };
 
@@ -22,9 +37,9 @@ exports.login = async (req, res) => {
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    const token = jwt.sign({ userId: user._id }, 'your_secret_key', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, jwtConstants.secret , { expiresIn: '1h' });
     res.json({ token });
   } catch (error) {
-    res.status(400).json({ error: 'Login failed' });
+    res.status(500).json({ error: 'Login failed' });
   }
 };

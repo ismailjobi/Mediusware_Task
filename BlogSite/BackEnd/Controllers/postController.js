@@ -22,6 +22,26 @@ exports.getPosts = async (req, res) => {
   }
 };
 
+// Get All Posts
+exports.getPosts = async (req, res) => {
+  try {
+    const posts = await Post.find({_id: req.params.id}).populate('author', 'name');
+    res.json(posts);
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to retrieve posts' });
+  }
+};
+
+// Get All Posts
+exports.getUserPosts = async (req, res) => {
+  try {
+    const posts = await Post.find({author: req.user.userId}).populate('author', 'name');
+    res.json(posts);
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to retrieve posts' });
+  }
+};
+
 // Update Post
 exports.updatePost = async (req, res) => {
   try {
@@ -55,7 +75,7 @@ exports.updatePost = async (req, res) => {
 exports.deletePost = async (req, res) => {
   try {
     const post = await Post.findOneAndDelete({ _id: req.params.id, author: req.user.userId });
-    if (!post) return res.status(40).json({ error: 'Post not found or unauthorized' });
+    if (!post) return res.status(401).json({ error: 'Post not found or unauthorized' });
     res.json({ message: 'Post deleted successfully' });
   } catch (error) {
     res.status(400).json({ error: 'Failed to delete post' });
